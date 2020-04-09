@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Available Times full of data 1`] = `
+Array [
+  <h2>
+    Available Times
+  </h2>,
+  <table
+    className="advisors table adv-table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Advisor ID
+        </th>
+        <th>
+          Available Times
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          399956
+        </td>
+        <td>
+          <ul
+            className="list-unstyled"
+          >
+            <li>
+              <time
+                className="book-time"
+                dateTime="2019-08-21T21:00:00-04:00"
+              >
+                08/21/2019 9:00 PM
+              </time>
+              <button
+                className="book btn-small btn-primary"
+                onClick={[Function]}
+              >
+                Book
+              </button>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          399958
+        </td>
+        <td>
+          <ul
+            className="list-unstyled"
+          >
+            <li>
+              <time
+                className="book-time"
+                dateTime="2019-08-21T14:15:00-04:00"
+              >
+                08/21/2019 2:15 PM
+              </time>
+              <button
+                className="book btn-small btn-primary"
+                onClick={[Function]}
+              >
+                Book
+              </button>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          417239
+        </td>
+        <td>
+          <ul
+            className="list-unstyled"
+          >
+            <li>
+              <time
+                className="book-time"
+                dateTime="2019-08-21T17:30:00-04:00"
+              >
+                08/21/2019 5:30 PM
+              </time>
+              <button
+                className="book btn-small btn-primary"
+                onClick={[Function]}
+              >
+                Book
+              </button>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>,
+]
+`;
+
+exports[`Available Times with no data 1`] = `
+Array [
+  <h2>
+    Available Times
+  </h2>,
+  <table
+    className="advisors table adv-table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Advisor ID
+        </th>
+        <th>
+          Available Times
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>,
+]
+`;
