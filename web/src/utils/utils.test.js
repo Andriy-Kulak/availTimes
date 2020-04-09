@@ -11,8 +11,8 @@ describe('util tests', () => {
   })
   it('dataTransform 1', () => {
     const data1 = [{ id: 372955, time: '2019-08-27T14:00:00-04:00' }]
-    expect(dataTransform(data1)).toMatchObject({
-      '372955': [new Date('2019-08-27T18:00:00.000Z')],
+    expect(tansformAvail(data1)).toMatchObject({
+      '372955': ['2019-08-27T14:00:00-04:00'],
     })
   })
 
@@ -22,12 +22,9 @@ describe('util tests', () => {
       { id: 372955, time: '2019-08-27T12:00:00-04:00' },
       { id: 319369, time: '2019-08-25T20:00:00-04:00' },
     ]
-    expect(dataTransform(data2)).toMatchObject({
-      '319369': [new Date('2019-08-26T00:00:00.000Z')],
-      '372955': [
-        new Date('2019-08-27T16:00:00.000Z'),
-        new Date('2019-08-27T20:00:00.000Z'),
-      ],
+    expect(tansformAvail(data2)).toMatchObject({
+      '319369': ['2019-08-25T20:00:00-04:00'],
+      '372955': ['2019-08-27T12:00:00-04:00', '2019-08-27T16:00:00-04:00'],
     })
   })
 

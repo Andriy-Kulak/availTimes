@@ -27,6 +27,7 @@ const App = () => {
       )
     await bookAdvisor({ id: parseInt(id), time, name: userName })
     getBookedTimes()
+    updateAvailablity()
   }
 
   useEffect(() => {

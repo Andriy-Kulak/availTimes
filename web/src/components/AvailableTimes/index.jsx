@@ -21,7 +21,7 @@ const AvailableTimes = React.memo(({ data, onChange }) => {
                   {adjustedData[id].map((date) => (
                     <li key={date}>
                       <time dateTime={date} className="book-time">
-                        {prettifyDate(date)}
+                        {prettifyDate(new Date(date))}
                       </time>
                       <button
                         className="book btn-small btn-primary"

@@ -4,11 +4,11 @@ const bookingSchema = require('../models/booking')
 
 const state = []
 
-router.get('/', async (req, res) => {
+router.get('/', getBookings, async (req, res) => {
   try {
     // I would retrieve the bookings here
 
-    res.json({ data: state })
+    res.json({ data: res.bookings })
   } catch (e) {
     res.status(500).json({ message: e.message })
   }
@@ -35,4 +35,10 @@ function validateBody(req, res, next) {
   next()
 }
 
+function getBookings(req, res, next) {
+  res.bookings = state
+  next()
+}
+
 module.exports = router
+module.exports.getBookings = getBookings

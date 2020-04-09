@@ -4,10 +4,12 @@ export const tansformAvail = (data) => {
   const map = {}
   data.forEach((val) => {
     if (!map[val.id]) map[val.id] = []
-    map[val.id].push(new Date(val.time))
+    map[val.id].push(val.time)
   })
   for (let key in map) {
-    map[key].sort(compareAsc)
+    map[key].sort((dateLeft, dateRight) =>
+      compareAsc(new Date(dateLeft), new Date(dateRight))
+    )
   }
   return map
 }
