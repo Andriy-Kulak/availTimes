@@ -1,4 +1,4 @@
-const bookingSchema = require('./models/booking')
+const bookingSchema = require('./booking')
 
 describe('bookin schema', () => {
   it('should error whe name is not provided', (done) => {
