@@ -1,6 +1,5 @@
 const swap = (json, checkAgainst) => {
   const arr = []
-  // console.log('checkAgainst', checkAgainst)
   for (let key in json) {
     // check if value is in bookedArray (checkedAgainst) already
     const val = checkAgainst.find(
@@ -11,8 +10,6 @@ const swap = (json, checkAgainst) => {
     if (val) {
       continue
     }
-
-    // if (val || val.lenth) continue
     arr.push({ id: json[key], time: key })
   }
   return arr
