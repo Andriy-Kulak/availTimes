@@ -31,4 +31,4 @@ const transformAvail = (data, checkAgainst = []) => {
   return ans
 }
 
-module.exports = { transformAvail }
+module.exports = { transformAvail, swap }
