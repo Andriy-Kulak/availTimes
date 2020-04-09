@@ -1,32 +1,39 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Header from '../Header'
+import { prettifyDate } from '../../utils/dataTransform'
+import TableHeader from '../Table/Header'
 
-const BookedTimes = () => {
+const BookedTimes = React.memo(({ data }) => {
   return (
     <>
       <Header text="Booked Times" />
       <table className="bookings table">
-        <thead>
-          <tr>
-            <th>Advisor ID</th>
-            <th>Student Name</th>
-            <th>Date/Time</th>
-          </tr>
-        </thead>
+        <TableHeader data={['Advisor ID', 'Student Name', 'Date/Time']} />
         <tbody>
-          <tr>
-            <td>36232</td>
-            <td>John Smith</td>
-            <td>
-              <time dateTime="2019-04-03T10:00:00-04:00">
-                4/3/2019 10:00 am
-              </time>
-            </td>
-          </tr>
+          {data.map((x) => (
+            <tr key={`${x.id}-${x.time}-${x.name}`}>
+              <td>{x.id}</td>
+              <td>{x.name}</td>
+              <td>
+                <time dateTime={x.time}>{prettifyDate(new Date(x.time))}</time>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </>
   )
+})
+
+BookedTimes.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      time: PropTypes.string,
+    })
+  ),
 }
 
 export default BookedTimes

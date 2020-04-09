@@ -1,3 +1,2 @@
-const HOST = 'http://localhost:4433'
-
-export const AVAILABILITY_URL = `${HOST}/api/advisors/availability`
+export const AVAILABILITY_URL = `${process.env.REACT_APP_HOST}/api/advisors/availability`
+export const BOOK_URL = `${process.env.REACT_APP_HOST}/api/book`

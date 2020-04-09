@@ -4,7 +4,4 @@
 - Book a time with a Thinkful advisor
 - See a list of currently booked times
 
-* proptypes
-* ensure datestring is set up correctly
-* error testing on front end and backend
-* add .env
+* add testing on front end

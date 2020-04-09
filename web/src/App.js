@@ -1,29 +1,49 @@
 import React, { useState, useEffect } from 'react'
-import { getAvailability } from './utils/apiMethods'
+import { getAvailability, bookAdvisor, getBookings } from './utils/apiMethods'
 import AvailableTimes from './components/AvailableTimes'
 import BookForm from './components/BookForm'
 import BookedTimes from './components/BookedTimes'
 
 const App = () => {
-  const [appState, updateState] = useState({ data: [], today: null })
+  const [availableTimes, updateAvail] = useState([])
+  const [userName, updateName] = useState('')
+  const [bookedTimes, updateBookings] = useState([])
 
   const updateAvailablity = async () => {
     const resp = await getAvailability()
-    updateState({ ...appState, data: resp.data })
+    updateAvail(resp)
+  }
+
+  const getBookedTimes = async () => {
+    const bookingsResp = await getBookings()
+    updateBookings(bookingsResp)
+  }
+
+  const bookTime = async ({ id, time }) => {
+    if (!userName) return window.alert('Please enter your name')
+    if (!id || !time)
+      return window.alert(
+        'There was an issue with the booking. Please contact support'
+      )
+    await bookAdvisor({ id: parseInt(id), time, name: userName })
+    getBookedTimes()
   }
 
   useEffect(() => {
     updateAvailablity()
+    getBookedTimes()
   }, [])
 
-  const { data } = appState
-  console.log('appState', appState)
+  console.log('appState', { availableTimes, userName, bookedTimes })
 
   return (
     <div className="App container">
-      <BookForm />
-      <AvailableTimes data={data} />
-      <BookedTimes />
+      <BookForm onChange={updateName} />
+      <AvailableTimes
+        data={availableTimes}
+        onChange={({ id, time }) => bookTime({ id, time })}
+      />
+      <BookedTimes data={bookedTimes} />
     </div>
   )
 }
