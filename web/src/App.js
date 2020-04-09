@@ -35,8 +35,6 @@ const App = () => {
     getBookedTimes()
   }, [])
 
-  console.log('appState', { availableTimes, userName, bookedTimes })
-
   return (
     <div className="App container">
       <BookForm onChange={updateName} />
