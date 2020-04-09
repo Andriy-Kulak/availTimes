@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Book Form component matches 1`] = `
+Array [
+  <h1>
+    Book Time with an Advisor
+  </h1>,
+  <form
+    className="col-md-6"
+    id="name-form"
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="name-field"
+      >
+        Your Name
+      </label>
+      <input
+        className="form-control"
+        id="name-field"
+        onChange={[Function]}
+        type="text"
+      />
+    </div>
+  </form>,
+]
+`;

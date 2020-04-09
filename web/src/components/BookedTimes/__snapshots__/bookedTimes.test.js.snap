@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Booked Times full of data 1`] = `
+Array [
+  <h2>
+    Booked Times
+  </h2>,
+  <table
+    className="bookings table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Advisor ID
+        </th>
+        <th>
+          Student Name
+        </th>
+        <th>
+          Date/Time
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          319369
+        </td>
+        <td>
+          333
+        </td>
+        <td>
+          <time
+            dateTime="2019-08-24T20:00:00-04:00"
+          >
+            08/24/2019 8:00 PM
+          </time>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          319369
+        </td>
+        <td>
+          333
+        </td>
+        <td>
+          <time
+            dateTime="2019-08-25T10:30:00-04:00"
+          >
+            08/25/2019 10:30 AM
+          </time>
+        </td>
+      </tr>
+    </tbody>
+  </table>,
+]
+`;
+
+exports[`Booked Times with no data 1`] = `
+Array [
+  <h2>
+    Booked Times
+  </h2>,
+  <table
+    className="bookings table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Advisor ID
+        </th>
+        <th>
+          Student Name
+        </th>
+        <th>
+          Date/Time
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>,
+]
+`;
