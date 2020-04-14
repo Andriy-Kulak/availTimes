@@ -5,8 +5,12 @@ import Header from '../Header'
 
 import { tansformAvail, prettifyDate } from '../../utils/dataTransform'
 
-const AvailableTimes = React.memo(({ data, onChange }) => {
-  const adjustedData = React.useCallback(tansformAvail(data), [data])
+const AvailableTimes = React.memo(({ data, onChange, isDisabled, page }) => {
+  const start = page * 10
+  const finish = page * 10 + 10
+  const paginatedData = data.slice(start, finish)
+  console.log('paginatedData', { paginatedData, page, start, finish, data })
+  const adjustedData = tansformAvail(paginatedData)
   return (
     <>
       <Header text="Available Times" />
@@ -24,10 +28,11 @@ const AvailableTimes = React.memo(({ data, onChange }) => {
                         {prettifyDate(new Date(date))}
                       </time>
                       <button
+                        disabled={isDisabled}
                         className="book btn-small btn-primary"
                         onClick={() => onChange({ id, time: date })}
                       >
-                        Book
+                        {isDisabled ? 'Loading' : 'Book'}
                       </button>
                     </li>
                   ))}
