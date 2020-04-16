@@ -13,7 +13,7 @@ const swap = (json, checkAgainst) => {
     arr.push({
       id: json[key],
       time: key,
-      realId: Math.floor(Math.random() * 100000000),
+      // realId: Math.floor(Math.random() * 100000000),
     })
 
     // change this to advisor Id
